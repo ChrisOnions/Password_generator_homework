@@ -21,25 +21,49 @@
   var specialCharacters = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~" ;
     //split the Special characters into an individual array
   var specialCharacters = specialCharacters.split("");
-  
-
+  var numberLength = 0
+// Function to ask questions for password generation
   function generatePassword(){
+    // user input for password length
     
     var numberLength = parseInt(
-      prompt("How long would you like your password to be 8-100"));
+      prompt("How long would you like your password to be? 8-100"));
       console.log(numberLength);
-     
-  if (numberLength <= 100) {
-  console.log("correct") ;}
-  else{
-    var numberLength = 
-    prompt("Sorry number must be Below 100 characters");}
+
+
+      // Checks if the number is a number and not a sting
+if (isNaN(numberLength) === !true) {
+  console.log("correct") 
+}
+  else {
+    alert ("sorry please number and try again")
+    return;
+  }
+
+  // After user input number checks if its in the correct range  
+  if (numberLength <= 100 ) {
+  console.log("correct") ;
+}
+  else {
+      alert("Sorry " + numberLength + " is not between 8-100")
+    return;
+  }
   
-  console.log(numberLength);
+  // chacks if number is between secified value
+  if (numberLength > 8) {
+    console.log("correct") ;
+  }
+  
+    else {
+      alert("Sorry " + numberLength + " is not between 8-100 try again")
+    return;}
   
 
-}
-generatePassword()
+  }
+  console.log(numberLength)
+  generatePassword()
+
+
 
 
 // Make an array of all characters. A - Z
