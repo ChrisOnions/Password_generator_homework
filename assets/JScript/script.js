@@ -21,50 +21,116 @@
   var specialCharacters = " !#$%&'()*+,-./:;<=>?@[\]^_`{|}~" ;
     //split the Special characters into an individual array
   var specialCharacters = specialCharacters.split("");
-  var numberLength = 0
+  var numberLengthNumber = 0
+  var numbersChoiceBool = null
+  var caseChoiceBool = null
+  var letterChoiceBool = null
+  var specialCharBool = null 
+  
+
+
+
 // Function to ask questions for password generation
-  function generatePassword(){
-    // user input for password length
-    
-    var numberLength = parseInt(
-      prompt("How long would you like your password to be? 8-100"));
-      console.log(numberLength);
+function generatePassword(){
+  // user input for password length  
+  var numberLengthNumber = parseInt(
+    prompt("How long would you like your password to be? 8-100"));
+    console.log(numberLengthNumber);
 
 
-      // Checks if the number is a number and not a sting
-if (isNaN(numberLength) === !true) {
-  console.log("correct") 
-}
+  // Checks if the number is a number and not a sting
+  if (isNaN(numberLengthNumber) === !true) {
+    console.log("correct");
+    }
   else {
-    alert ("sorry please number and try again")
-    return;
+    alert ("sorry please enter a NUMBER and try again")
+  return;
   }
 
-  // After user input number checks if its in the correct range  
-  if (numberLength <= 100 ) {
-  console.log("correct") ;
-}
+  // checks if number below secified value 
+  if (numberLengthNumber <= 100 ) {
+    console.log("correct");
+  }
   else {
-      alert("Sorry " + numberLength + " is not between 8-100")
-    return;
+    alert("Sorry " + numberLengthNumber + " is not between 8-100")
+  return;
+  } 
+
+  // checks if number above secified value
+  if (numberLengthNumber > 8) {
+    console.log("correct");
   }
-  
-  // chacks if number is between secified value
-  if (numberLength > 8) {
-    console.log("correct") ;
+  else {
+    alert("Sorry " + numberLengthNumber + " is not between 8-100 try again")
+  return;}
+
+// User input For if they want uppercase letters 
+  var numbersChoiceBool = confirm("Press ok for Numbers in your password if not press Cancel")
+  if (numbersChoiceBool == true){
+      numbersChoiceBool = true ;
+  console.log(numbersChoiceBool);
   }
-  
+  else {
+    numbersChoiceBool = false
+    console.log(numbersChoiceBool)
+  }
+
+  //Ask user if they want letter aswell as numbers
+  var  userChoiceArray = confirm("Press OK if you would you like to also use Letters if not Cancel")
+    if (userChoiceArray == true){
+        userChoiceArray = true 
+    console.log( userChoiceArray);
+    }
     else {
-      alert("Sorry " + numberLength + " is not between 8-100 try again")
-    return;}
-  
+      userChoiceArray[0] = false;
+      console.log(userChoiceArray)
+    }
+    console.log(userChoiceArray)
+  // Ask user if they want to use upper and lower case
+  var caseChoiceBool = confirm("Press ok for Both UPPER and lower case if you would like only lower case press Cancel")
+    if (caseChoiceBool == true){
+        caseChoiceBool = true 
+    
+    console.log(caseChoiceBool);
+    }
+    else {
+    caseChoiceBool = false
+      console.log(caseChoiceBool)
+    }
+    //Asks user if they want Special chars
+  var specialCharBool = confirm("Press ok for Both UPPER and lower case if you would like only lower case press Cancel")
+    if (specialCharBool == true){
+        specialCharBool = true 
+
+    console.log(specialCharBool);
+    }
+    else {
+      specialCharBool = false
+      console.log(specialCharBool)
+    }
+
+    if  (
+      numbersChoiceBool === false && 
+      caseChoiceBool === false && 
+      letterChoiceBool === false && 
+      specialCharBool === false  
+      ) {
+        alert ("You need to choose at least one Try again" )
+        generatePassword()
+        console.log("no options selected")
+        } 
+    
+  // 
+
 
   }
-  console.log(numberLength)
-  generatePassword()
 
 
 
+
+
+
+ 
 
 // Make an array of all characters. A - Z
 // Make a random number generator in an function. 0 - 9
@@ -72,7 +138,7 @@ if (isNaN(numberLength) === !true) {
 
 // Make a function to choose how long the password will be 8 - 100
 // Make a make a function to choose each element from either the letters or numbers randomly 
-// Add them all to the array ad the end 
+// Add them all to the array at the end 
 // consolidate the array so its printed as a password
 
 // Generate password button clicked
