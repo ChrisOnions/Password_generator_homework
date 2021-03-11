@@ -59,19 +59,19 @@ function generatePassword() {
     choicesArray = choicesArray.concat(numbers)
     console.log(numbersChoiceBool);
   }
- // User input For if user wants lowercase letters
+  // User input For if user wants lowercase letters
   var userChoiceBool = confirm("Press OK if you would you like to use Lower Case Letters if not Cancel")
   if (userChoiceBool == true) {
     choicesArray = choicesArray.concat(lowerCaseLetters)
     console.log(userChoiceBool);
   }
-// User input For if user wants lowercase letters
+  // User input For if user wants lowercase letters
   var caseChoiceBool = confirm("Press ok for Both UPPER and lower case if you would like only lower case press Cancel")
   if (caseChoiceBool == true) {
     choicesArray = choicesArray.concat(upperCaseLetters)
     console.log(caseChoiceBool);
   }
- // User input For if user wants speical characters
+  // User input For if user wants speical characters
   var specialCharBool = confirm("Press ok for Special Characters if not  press Cancel")
   if (specialCharBool == true) {
     choicesArray = choicesArray.concat(specialCharacters)
