@@ -1,15 +1,16 @@
+// Password variable to output final password
 var password = "";
-//String of uppercase letters
+// String of uppercase letters
 var upperCaseLetters = "ABCDEFGHIJKLMNOPQRXTUVWXYZ";
-//split the letters into an individual array
+// Split the letters into an individual array
 upperCaseLetters = upperCaseLetters.split("");
-//String of lowercase letters
+// String of lowercase letters
 var lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-//split the letters into an individual array
+// Split the letters into an individual array
 lowerCaseLetters = lowerCaseLetters.split("");
 // String of all special characters
 var specialCharacters = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
-//split the Special characters into an individual array
+// Split the Special characters into an individual array
 specialCharacters = specialCharacters.split("");
 // Numbers variable 
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
@@ -49,33 +50,35 @@ function generatePassword() {
     alert("Sorry " + numberLengthNumber + " is not between 8-100 try again")
     return;
   }
+  // Empty choice array to store the chosen variables
   var choicesArray = [];
-  // User input For if they want uppercase letters 
+
+  // User input For if user wants numbers  
   var numbersChoiceBool = confirm("Press ok for Numbers in your password if not press Cancel")
   if (numbersChoiceBool == true) {
     choicesArray = choicesArray.concat(numbers)
     console.log(numbersChoiceBool);
   }
- 
+ // User input For if user wants lowercase letters
   var userChoiceBool = confirm("Press OK if you would you like to use Lower Case Letters if not Cancel")
   if (userChoiceBool == true) {
     choicesArray = choicesArray.concat(lowerCaseLetters)
     console.log(userChoiceBool);
   }
-
+// User input For if user wants lowercase letters
   var caseChoiceBool = confirm("Press ok for Both UPPER and lower case if you would like only lower case press Cancel")
   if (caseChoiceBool == true) {
     choicesArray = choicesArray.concat(upperCaseLetters)
     console.log(caseChoiceBool);
   }
- 
+ // User input For if user wants speical characters
   var specialCharBool = confirm("Press ok for Special Characters if not  press Cancel")
   if (specialCharBool == true) {
     choicesArray = choicesArray.concat(specialCharacters)
     console.log(specialCharBool);
   }
 
-  //
+  //bool expression to check user choices are all false
   if (
     numbersChoiceBool === false &&
     caseChoiceBool === false &&
@@ -87,6 +90,7 @@ function generatePassword() {
     return;
     //
   }
+  // pickes items randomly from array with choices
   console.log(choicesArray)
   for (var i = 0; i < numberLengthNumber; i++) {
     var item = choicesArray[Math.floor(Math.random() * choicesArray.length)];
@@ -94,7 +98,7 @@ function generatePassword() {
   }
   return password;
 }
-
+// selector that points to generate button
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
