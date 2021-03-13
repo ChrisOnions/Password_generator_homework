@@ -29,4 +29,4 @@ Can be opened in any text editor workspace
 * notepad++
 
 ## Pictures :
-![404 image missing](./assets/Pics/ScreenShot.jpg "Optional Title")
+![404 image missing](/assets/Pics/ScreenShot.jpg "Optional Title")
